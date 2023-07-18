@@ -426,13 +426,13 @@ server <- function(input, output) {
         if(input$sex_in == 1){   
             fig <- fig_male
 
-            ## Add extended lines if high bmi
-            if(BMI_calc_tbl[1,bmip] > 90){
-                fig <- fig %>% add_trace(y = ~P98, name = '98', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99, name = '99', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99_9, name = '99.9', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99_99, name = '99.99', mode = 'lines', legendgroup = 'group1')
-            }
+            # ## Add extended lines if high bmi - PZ removing this, data is not on public data file
+            # if(BMI_calc_tbl[1,bmip] > 90){
+            #     fig <- fig %>% add_trace(y = ~P98, name = '98', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99, name = '99', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99_9, name = '99.9', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99_99, name = '99.99', mode = 'lines', legendgroup = 'group1')
+            # }
             
             ## Add point for user input
             fig <- fig %>% add_trace(x = (input$agemos_raw + .5)/12, y = BMI_f(cm = cm_2, kg = kg_2),
@@ -446,13 +446,13 @@ server <- function(input, output) {
         ## If female, create plot 
             fig <- fig_female
             
-            ## Add extended lines if high bmi
-            if(BMI_calc_tbl[1,bmip] > 90){
-                fig <- fig %>% add_trace(y = ~P98, name = '98', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99, name = '99', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99_9, name = '99.9', mode = 'lines', legendgroup = 'group1')
-                fig <- fig %>% add_trace(y = ~P99_99, name = '99.99', mode = 'lines', legendgroup = 'group1')
-            }
+            # ## Add extended lines if high bmi - PZ removing this, data is not on public data file
+            # if(BMI_calc_tbl[1,bmip] > 90){
+            #     fig <- fig %>% add_trace(y = ~P98, name = '98', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99, name = '99', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99_9, name = '99.9', mode = 'lines', legendgroup = 'group1')
+            #     fig <- fig %>% add_trace(y = ~P99_99, name = '99.99', mode = 'lines', legendgroup = 'group1')
+            # }
             
             ## Add point for user input
             fig <- fig %>% add_trace(x = (input$agemos_raw + .5)/12, y = BMI_f(cm = cm_2, kg = kg_2),
