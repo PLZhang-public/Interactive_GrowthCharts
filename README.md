@@ -10,4 +10,6 @@ library(shiny)
 runGitHub( "Interactive_GrowthCharts", "PatLZhang")
 ```
 
+Necessary packages include: devtools, data.table, shinythemes, tidyverse, shiny, reactable, plotly, rio
+
 Additional clinical information: https://www.cdc.gov/growthcharts/extended-bmi.htm
